@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageColorChange</class>
+ <widget class="QMainWindow" name="ImageColorChange">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>411</width>
+    <height>466</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ImageColorChange</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="importButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Upload Image</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imageLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>391</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pickerButton1">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>200</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pick a Color</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="colorLabel1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>255 255 255</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="colorLabel2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>150</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>255 255 255</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="colorLabel3">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>150</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>255 255 255</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pickerButton2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>200</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pick a Color</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="changeColorButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>250</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Change Color</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="filterButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>290</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Apply Blur Fiter</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>350</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculating Time..</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>350</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculating Time..</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>350</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculating Time..</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel2_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>400</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculating Time..</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel3_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>400</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculating Time..</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel1_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculating Time..</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>imageLabel</zorder>
+   <zorder>importButton</zorder>
+   <zorder>pickerButton1</zorder>
+   <zorder>colorLabel1</zorder>
+   <zorder>colorLabel2</zorder>
+   <zorder>colorLabel3</zorder>
+   <zorder>pickerButton2</zorder>
+   <zorder>changeColorButton</zorder>
+   <zorder>filterButton</zorder>
+   <zorder>timeLabel1</zorder>
+   <zorder>timeLabel2</zorder>
+   <zorder>timeLabel3</zorder>
+   <zorder>timeLabel2_2</zorder>
+   <zorder>timeLabel3_2</zorder>
+   <zorder>timeLabel1_2</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ImageColorChange.qrc"/>
+ </resources>
+ <connections/>
+</ui>
