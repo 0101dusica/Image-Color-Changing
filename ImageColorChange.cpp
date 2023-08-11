@@ -69,9 +69,11 @@ ImageColorChange::ImageColorChange(QWidget* parent)
 
 
     changeColorButton = new QPushButton("Change Color", this);
+    changeColorButton->setEnabled(false);
     layout->addWidget(changeColorButton);
 
     filterButton = new QPushButton("Apply Blur Filter", this);
+    filterButton->setEnabled(false);
     layout->addWidget(filterButton);
 
 
@@ -113,12 +115,21 @@ void ImageColorChange::openImageDialog()
 {
     QString imagePath = QFileDialog::getOpenFileName(this, "Select Image");
     if (!imagePath.isEmpty()) {
-        // Load image and display
         QImage image(imagePath);
         imageLabel->setPixmap(QPixmap::fromImage(image).scaled(300, 300, Qt::KeepAspectRatio));
 
         pickerButton1->setEnabled(true);
 
+        colorLabel1->setText(QString("RGB: 255, 255, 255"));
+        colorLabel1->setStyleSheet("background-color: white; color: black;");
+        colorLabel2->setText(QString("RGB: 255, 255, 255"));
+        colorLabel2->setStyleSheet("background-color: white; color: black;");
+        colorLabel3->setText(QString("RGB: 255, 255, 255"));
+        colorLabel3->setStyleSheet("background-color: white; color: black;");
+
+
+        changeColorButton->setEnabled(true);
+        filterButton->setEnabled(true);
 
         timeLabel1->setText(QString("Calculating time.."));
         timeLabel2->setText(QString("Calculating time.."));
@@ -127,7 +138,6 @@ void ImageColorChange::openImageDialog()
         timeLabelParallel2->setText(QString("Calculating time.."));
         timeLabelParallel3->setText(QString("Calculating time.."));
         
-        //call function to find most common colors
         mostCommonColorsGUI();
     }
 }
@@ -454,28 +464,28 @@ void ImageColorChange::applyFilter(QImage& sourceImage) {
 
     // Apply the Gaussian blur filter to the image
     for (int y = 0; y < sourceImage.height(); ++y) {
-        for (int x = 0; x < sourceImage.width(); ++x) {
-            double red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0;
+    for (int x = 0; x < sourceImage.width(); ++x) {
+        double red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0;
 
-            for (int dy = -radius; dy <= radius; ++dy) {
-                for (int dx = -radius; dx <= radius; ++dx) {
-                    int sx = qBound(0, x + dx, sourceImage.width() - 1);
-                    int sy = qBound(0, y + dy, sourceImage.height() - 1);
+        for (int dy = -radius; dy <= radius; ++dy) {
+            for (int dx = -radius; dx <= radius; ++dx) {
+                int sx = qBound(0, x + dx, sourceImage.width() - 1);
+                int sy = qBound(0, y + dy, sourceImage.height() - 1);
 
-                    QColor pixelColor(sourceImage.pixel(sx, sy));
-                    double weight = kernel[(dy + radius) * kernelSize + (dx + radius)];
+                QColor pixelColor(sourceImage.pixel(sx, sy));
+                double weight = kernel[(dy + radius) * kernelSize + (dx + radius)];
 
-                    red += pixelColor.redF() * weight;
-                    green += pixelColor.greenF() * weight;
-                    blue += pixelColor.blueF() * weight;
-                    alpha += pixelColor.alphaF() * weight;
-                }
+                red += pixelColor.redF() * weight;
+                green += pixelColor.greenF() * weight;
+                blue += pixelColor.blueF() * weight;
+                alpha += pixelColor.alphaF() * weight;
             }
-
-            QColor blurredColor(qRound(red * 255.0), qRound(green * 255.0), qRound(blue * 255.0), qRound(alpha * 255.0));
-            sourceImage.setPixel(x, y, blurredColor.rgba());
         }
+
+        QColor blurredColor(qRound(red * 255.0), qRound(green * 255.0), qRound(blue * 255.0), qRound(alpha * 255.0));
+        sourceImage.setPixel(x, y, blurredColor.rgba());
     }
+}
 }
 
 //parallel function for filter apply
